@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Funtoader.Common.Shared\Funtoader.Common.Shared.csproj" />
+    <ProjectReference Include="..\Funtoader.Data.Models\Funtoader.Data.Models.csproj" />
+    <ProjectReference Include="..\FunToader.Domain.Business\FunToader.Domain.Business.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,82 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27130.2010
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunToaderCoreWebService", "FunToaderCoreWebService\FunToaderCoreWebService.csproj", "{A7DD775B-7DE8-4C90-AF94-F2E6472B6624}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunToader.Orchestration.Core", "FunToader.Orchestration.Core\FunToader.Orchestration.Core.csproj", "{5373DB5E-89A1-4DF6-A335-A8E6E7D704DE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D5394649-B8EA-4F0A-A046-A36CFEA70B8F} = {D5394649-B8EA-4F0A-A046-A36CFEA70B8F}
+		{452903E6-AF03-4243-A344-0EB36879DC61} = {452903E6-AF03-4243-A344-0EB36879DC61}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Orchestration", "Orchestration", "{D7B9C2FA-B20F-4592-B1A6-E04AAD8F904E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Consumer", "Consumer", "{3FAFA16B-B54C-42E6-B2F6-A593313D7F00}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunToader.Consumer.WebApi", "FunToader.Consumer.WebApi\FunToader.Consumer.WebApi.csproj", "{15E0BD52-21A2-4C5C-BF81-D0CA68EB439E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{51E0233B-7A1F-43AD-AB68-5AC0B36F0CBD} = {51E0233B-7A1F-43AD-AB68-5AC0B36F0CBD}
+		{D5394649-B8EA-4F0A-A046-A36CFEA70B8F} = {D5394649-B8EA-4F0A-A046-A36CFEA70B8F}
+		{5373DB5E-89A1-4DF6-A335-A8E6E7D704DE} = {5373DB5E-89A1-4DF6-A335-A8E6E7D704DE}
+		{452903E6-AF03-4243-A344-0EB36879DC61} = {452903E6-AF03-4243-A344-0EB36879DC61}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{744D21F5-BF96-448E-87CB-BBD303E3BB13}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunToader.Domain.Business", "FunToader.Domain.Business\FunToader.Domain.Business.csproj", "{51E0233B-7A1F-43AD-AB68-5AC0B36F0CBD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{B2B117FF-D70F-49D4-904D-ED6C169BA4C1}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Funtoader.Data.Models", "Funtoader.Data.Models\Funtoader.Data.Models.csproj", "{452903E6-AF03-4243-A344-0EB36879DC61}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{BC480EBF-90AE-47D2-B559-13C74A4A5071}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Funtoader.Common.Shared", "Funtoader.Common.Shared\Funtoader.Common.Shared.csproj", "{D5394649-B8EA-4F0A-A046-A36CFEA70B8F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A7DD775B-7DE8-4C90-AF94-F2E6472B6624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A7DD775B-7DE8-4C90-AF94-F2E6472B6624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A7DD775B-7DE8-4C90-AF94-F2E6472B6624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A7DD775B-7DE8-4C90-AF94-F2E6472B6624}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5373DB5E-89A1-4DF6-A335-A8E6E7D704DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5373DB5E-89A1-4DF6-A335-A8E6E7D704DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5373DB5E-89A1-4DF6-A335-A8E6E7D704DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5373DB5E-89A1-4DF6-A335-A8E6E7D704DE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{15E0BD52-21A2-4C5C-BF81-D0CA68EB439E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{15E0BD52-21A2-4C5C-BF81-D0CA68EB439E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{15E0BD52-21A2-4C5C-BF81-D0CA68EB439E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{15E0BD52-21A2-4C5C-BF81-D0CA68EB439E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51E0233B-7A1F-43AD-AB68-5AC0B36F0CBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51E0233B-7A1F-43AD-AB68-5AC0B36F0CBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51E0233B-7A1F-43AD-AB68-5AC0B36F0CBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51E0233B-7A1F-43AD-AB68-5AC0B36F0CBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{452903E6-AF03-4243-A344-0EB36879DC61}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{452903E6-AF03-4243-A344-0EB36879DC61}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{452903E6-AF03-4243-A344-0EB36879DC61}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{452903E6-AF03-4243-A344-0EB36879DC61}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5394649-B8EA-4F0A-A046-A36CFEA70B8F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5394649-B8EA-4F0A-A046-A36CFEA70B8F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5394649-B8EA-4F0A-A046-A36CFEA70B8F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5394649-B8EA-4F0A-A046-A36CFEA70B8F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{5373DB5E-89A1-4DF6-A335-A8E6E7D704DE} = {D7B9C2FA-B20F-4592-B1A6-E04AAD8F904E}
+		{15E0BD52-21A2-4C5C-BF81-D0CA68EB439E} = {3FAFA16B-B54C-42E6-B2F6-A593313D7F00}
+		{51E0233B-7A1F-43AD-AB68-5AC0B36F0CBD} = {744D21F5-BF96-448E-87CB-BBD303E3BB13}
+		{452903E6-AF03-4243-A344-0EB36879DC61} = {B2B117FF-D70F-49D4-904D-ED6C169BA4C1}
+		{D5394649-B8EA-4F0A-A046-A36CFEA70B8F} = {BC480EBF-90AE-47D2-B559-13C74A4A5071}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {1B08F44B-3D42-4C8B-AD08-A061FB8B7959}
+	EndGlobalSection
+EndGlobal
