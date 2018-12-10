@@ -16,75 +16,80 @@ using Microsoft.AspNetCore.Mvc.Controllers;
 using SimpleInjector;
 using SimpleInjector.Integration.AspNetCore.Mvc;
 using SimpleInjector.Lifestyles;
+using FunToader.Orchestration.Core.Interfaces.Media;
+using FunToader.Orchestration.Core.Interfaces.CommandSender;
+using FunToader.Consumer.WebApi.Controllers;
+using Microsoft.AspNetCore.Mvc;
 
 namespace FunToader.Consumer.WebApi
 {
-    public class Startup
+  public class Startup
+  {
+    private Container container = new Container();
+
+    public Startup(IConfiguration configuration)
     {
-        private Container container = new Container();
-
-        public Startup(IConfiguration configuration)
-        {
-            Configuration = configuration;
-        }
-
-
-        private void IntegrateSimpleInjector(IServiceCollection services)
-        {
-            container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
-
-            services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
-
-            services.AddSingleton<IControllerActivator>(
-                new SimpleInjectorControllerActivator(container));
-
-            services.EnableSimpleInjectorCrossWiring(container);
-            services.UseSimpleInjectorAspNetRequestScoping(container);
-        }
-
-        public IConfiguration Configuration { get; }
-
-        // This method gets called by the runtime. Use this method to add services to the container.
-        public void ConfigureServices(IServiceCollection services)
-        {
-            services.AddMvc();
-            //  services.AddHangfire();
-
-            IntegrateSimpleInjector(services);
-        }
-
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IHostingEnvironment env)
-        {
-            InitializeContainer(app);
-
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
-            container.Verify();
-
-
-            // ASP.NET default stuff here
-            app.UseMvc(routes =>
-            {
-                routes.MapRoute(
-                    name: "default",
-                    template: "{controller=Values}/{id?}");
-            });
-        }
-
-        private void InitializeContainer(IApplicationBuilder app)
-        {
-
-            container.RegisterMvcViewComponents(app);
-
-            // Add application services
-            container.Register<ColorService>(Lifestyle.Scoped);
-            container.Register<CommandSenderService>(Lifestyle.Singleton);
-
-            // Allow Simple Injector to resolve services from ASP.NET Core.
-            container.AutoCrossWireAspNetComponents(app);
-        }
+      Configuration = configuration;
     }
+
+
+    private void IntegrateSimpleInjector(IServiceCollection services)
+    {
+      container.Options.DefaultScopedLifestyle = new AsyncScopedLifestyle();
+
+      services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
+
+      services.AddSingleton<IControllerActivator>(
+          new SimpleInjectorControllerActivator(container));
+
+      services.EnableSimpleInjectorCrossWiring(container);
+      services.UseSimpleInjectorAspNetRequestScoping(container);
+    }
+
+    public IConfiguration Configuration { get; }
+
+    // This method gets called by the runtime. Use this method to add services to the container.
+    public void ConfigureServices(IServiceCollection services)
+    {
+      services.AddMvc();
+      //  services.AddHangfire();
+
+      IntegrateSimpleInjector(services);
+    }
+
+    // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    {
+      InitializeContainer(app);
+
+      if (env.IsDevelopment())
+      {
+        app.UseDeveloperExceptionPage();
+      }
+      container.Verify();
+
+
+      // ASP.NET default stuff here
+      app.UseMvc(routes =>
+      {
+        routes.MapRoute(
+                  name: "default",
+                  template: "{controller}/{id?}");
+      });
+    }
+
+    private void InitializeContainer(IApplicationBuilder app)
+    {
+      
+      container.RegisterMvcControllers(app);
+
+      // Add application services
+      container.Register<IColorService, ColorService>(Lifestyle.Scoped);
+      container.Register<ICommandSenderService, CommandSenderService>(Lifestyle.Singleton);
+      
+
+      // Allow Simple Injector to resolve services from ASP.NET Core.
+      container.AutoCrossWireAspNetComponents(app);
+    }
+  }
 }

@@ -1,8 +1,8 @@
 ﻿using Funtoader.Common.Shared.Enums;
 using Funtoader.Data.Models.Command;
 using FunToader.Domain.Business.Models.Media;
+using FunToader.Orchestration.Core.Interfaces.CommandSender;
 using FunToader.Orchestration.Core.Interfaces.Media;
-using FunToader.Orchestration.Core.Services.CommandSender;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -14,7 +14,7 @@ namespace FunToader.Orchestration.Core.Services.Media
     public class ColorService : IMediaService<ColorRequest>, IColorService
     {
 
-        private readonly CommandSenderService commandSenderService;
+        private readonly ICommandSenderService commandSenderService;
 
         private const string argbCmd = "ARGB.";
         private const string displaySettingCmd = "t.";
@@ -23,7 +23,7 @@ namespace FunToader.Orchestration.Core.Services.Media
         private const FunToaderCommandType type = FunToaderCommandType.COLOR;
         public const string fieldDelimeter = ":";
 
-        public ColorService(CommandSenderService commandSenderService)
+        public ColorService(ICommandSenderService commandSenderService)
         {
             this.commandSenderService = commandSenderService;
         }

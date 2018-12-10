@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27130.2010
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunToaderCoreWebService", "FunToaderCoreWebService\FunToaderCoreWebService.csproj", "{A7DD775B-7DE8-4C90-AF94-F2E6472B6624}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunToader.Orchestration.Core", "FunToader.Orchestration.Core\FunToader.Orchestration.Core.csproj", "{5373DB5E-89A1-4DF6-A335-A8E6E7D704DE}"
 	ProjectSection(ProjectDependencies) = postProject
 		{D5394649-B8EA-4F0A-A046-A36CFEA70B8F} = {D5394649-B8EA-4F0A-A046-A36CFEA70B8F}
@@ -41,10 +39,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{A7DD775B-7DE8-4C90-AF94-F2E6472B6624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A7DD775B-7DE8-4C90-AF94-F2E6472B6624}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A7DD775B-7DE8-4C90-AF94-F2E6472B6624}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A7DD775B-7DE8-4C90-AF94-F2E6472B6624}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5373DB5E-89A1-4DF6-A335-A8E6E7D704DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5373DB5E-89A1-4DF6-A335-A8E6E7D704DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5373DB5E-89A1-4DF6-A335-A8E6E7D704DE}.Release|Any CPU.ActiveCfg = Release|Any CPU

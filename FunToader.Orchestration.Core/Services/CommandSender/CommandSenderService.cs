@@ -49,6 +49,7 @@ namespace FunToader.Orchestration.Core.Services.CommandSender
 
             // For WinXP, we need to bind (to any address) before we can call SetSocketOption(...AddMembership).
             IPEndPoint bindAddr = new IPEndPoint(IPAddress.Any, 1234);
+      
             mSender.Bind(bindAddr);
 
             mSender.SetSocketOption(SocketOptionLevel.IP, SocketOptionName.AddMembership, new MulticastOption(IPaddr));

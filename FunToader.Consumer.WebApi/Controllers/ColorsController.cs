@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using FunToader.Domain.Business.Models.Media;
-using FunToader.Orchestration.Core.Services.Media;
+using FunToader.Orchestration.Core.Interfaces.Media;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,9 +16,9 @@ namespace FunToader.Consumer.WebApi.Controllers
     public class ColorController : Controller
     {
         
-        private readonly ColorService colorService;
+        private readonly IColorService colorService;
 
-        public ColorController(ColorService colorService)
+        public ColorController(IColorService colorService)
         {
             this.colorService = colorService;
         }
